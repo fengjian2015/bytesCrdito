@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingHorizontal="15dp"
+    tools:context=".activity.PermissionsActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:textColor="#333333"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:text="Permission"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="User Personal Information"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                android:drawableRight="@mipmap/ic_permissions_gou"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FF750A"
+                android:textSize="14sp"
+                android:text="Our app collects user account data which includes email address and user public profile information like name, photo phone number by you to log-in to the app. This information is required as a part of registration process to access our service and it is also used to auto-populate relevant fields in the course of the interface of our app. Our app also collects mobile number for verification to check the active SIM status on the device, uniquely identify you and prevent frauds and access."
+                />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SMS"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                android:layout_marginTop="10dp"
+                android:drawableRight="@mipmap/ic_permissions_gou"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FF750A"
+                android:textSize="14sp"
+                android:text="SMS data from phone will be collected,transmitted and stored in our secured server(https://api.nairabagng.com) to assess creditworthiness, understand cash flow patterns and for fraud prevention. This data may be collected when the app is closed or not in use."
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Location"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                android:layout_marginTop="10dp"
+                android:drawableRight="@mipmap/ic_permissions_gou"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#666666"
+                android:textSize="14sp"
+                android:text="We collect and monitor the information about the location of your device to provide serviceability of your loan application, to reduce risk associated with your loan application and to provide pre-approved loan offers,this data will be transmitted and stored in our secured server(https://api.nairabagng.com). This also helps us to verify the address, make a better credit risk decision and expedite your KYC process."
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Camera"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                android:layout_marginTop="10dp"
+                android:drawableRight="@mipmap/ic_permissions_gou"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#666666"
+                android:textSize="14sp"
+                android:text="We require camera access so that you can easily scan, or capture required KYC documents and save time by allowing us to auto-fill relevant data. This ensures that you are provided with a seamless experience while using the application."
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Installed Applications"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                android:layout_marginTop="10dp"
+                android:drawableRight="@mipmap/ic_permissions_gou"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#666666"
+                android:textSize="14sp"
+                android:text="Metadata on installed apps will be collected,transmitted and stored in our secured server(https://api.nairabagng.com) to assess your creditworthiness and for analytical purposes. This data may be collected when the app is closed or not in use."
+                />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Storage"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                android:layout_marginTop="10dp"
+                android:drawableRight="@mipmap/ic_permissions_gou"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#666666"
+                android:textSize="14sp"
+                android:text="We require storage permission so that your KYC and other relevant documents can be securely downloaded and saved on your phone. You can then easily upload the right KYC related documents for faster loan application details filling and disbursal process. This ensures that you are provided with a seamless experience while using the application."
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Call History"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                android:layout_marginTop="10dp"
+                android:drawableRight="@mipmap/ic_permissions_gou"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#666666"
+                android:textSize="14sp"
+                android:text="When applying for a loan, we will use the call recording permission to obtain the contact phone number and call time, and verify the device by making a phone call to check the corresponding number in the call log to determine if you have received the call. It can improve the user's login experience and verify the authenticity of the user's identity. Simultaneously protecting account security and identifying fraud risks. The data will be uploaded to our server(https://api.nairabagng.com).We will never share this data with other partners. "
+                />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Device Information"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                android:layout_marginTop="10dp"
+                android:drawableRight="@mipmap/ic_permissions_gou"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#666666"
+                android:textSize="14sp"
+                android:text="This information about the device you use will be collected,transmitted and stored in our secured server(https://api.nairabagng.com),including device model,IP address,browser type,system version,manufacturer and so on.This is required for hassle-free registration and fraud prevetion."
+                />
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
+        android:paddingBottom="20dp"
+        >
+        <Button
+            android:id="@+id/bt_cancel"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"
+            android:text="Más tarde"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:foreground="?selectableItemBackground"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/bt_cancel"/>
+        <Button
+            android:id="@+id/bt_ok"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"
+            android:text="Aceptar"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:foreground="?selectableItemBackground"
+            android:background="@drawable/bt_ok"/>
+    </LinearLayout>
+</LinearLayout>

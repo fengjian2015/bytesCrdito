@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.LoginActivity">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@mipmap/ic_logo_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:text="Olá! "
+        android:textColor="#000000"
+        android:textSize="38sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bem-vindo ao Bytes Crédito."
+        android:textColor="#000000"
+        android:textSize="21sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        app:cardCornerRadius="15dp"
+        android:layout_marginHorizontal="10dp"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="30dp"
+            android:paddingTop="30dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="21dp"
+                android:background="@drawable/bg_input">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="+52"
+                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:gravity="center"
+                    android:paddingHorizontal="16dp"
+                    />
+                <EditText
+                    android:id="@+id/et_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:maxLength="10"
+                    android:paddingRight="10dp"
+                    android:hint="Phone Number"
+                    android:textColor="#666666"
+                    android:textSize="14sp"
+                    android:textColorHint="#999999"
+                    />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginHorizontal="21dp"
+                android:background="@drawable/bg_input">
+
+                <EditText
+                    android:id="@+id/et_code"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:hint="Código de verificación"
+                    android:textColor="#666666"
+                    android:textSize="14sp"
+                    android:maxLength="4"
+                    android:paddingLeft="10dp"
+                    android:textColorHint="#999999"
+                    />
+                <Button
+                    android:id="@+id/bt_code"
+                    android:layout_width="53dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/bt_ok"
+                    android:text="Código"
+                    android:foreground="?selectableItemBackground"
+                    android:layout_marginHorizontal="15dp"
+                    android:textColor="#FFFFFF"
+                    android:textSize="10sp"
+
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/pll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@+id/llInput"
+                android:layout_marginHorizontal="21dp"
+                android:layout_marginTop="21dp"
+                >
+                <CheckBox
+                    android:id="@+id/pcb"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:button="@null"
+                    android:layout_marginRight="7dp"
+                    android:background="@drawable/s_s"
+                    android:layout_marginTop="5dp"
+                    />
+                <TextView
+                    android:id="@+id/ptv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Al continuar,acepta nuestros &lt;Términos de servicio&gt; y &lt;Política de privacidad&gt; y recibe comunicaciones por SMS y correo electrónico."
+                    android:textColor="#999999"
+                    android:textSize="12sp"
+                    />
+            </LinearLayout>
+            <Button
+                android:id="@+id/bt_ok"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Siguiente"
+                android:textSize="16sp"
+                android:foreground="?selectableItemBackground"
+                android:textColor="#FFFFFF"
+                android:layout_marginHorizontal="18dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bt_ok"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
