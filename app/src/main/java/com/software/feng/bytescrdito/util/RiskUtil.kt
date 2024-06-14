@@ -69,12 +69,12 @@ import java.util.*
  */
 object RiskUtil {
 
-    fun tackPhoto(data: Intent, webView: WebView, mId: String) {
+    fun tackPhoto(data: Intent, webView: WebView, mId: String, action: String) {
         //自拍信息
         GlobalScope.launch(Dispatchers.IO) {
             var file: File? = null
             if (data == null){
-                JSCallBack.callBackJsError(Cons.InvokeCreditoTackPhoto,webView, mId,
+                JSCallBack.callBackJsError(action,webView, mId,
                     "file null")
                 return@launch
             }else{
@@ -84,7 +84,7 @@ object RiskUtil {
                     if (file != null){
                         LogUtil.d(" onActivityResult file.size"+ file.length())
                         file?.let {
-                            NetRequestManage.upImage(webView,mId,file)
+                            NetRequestManage.upImage(webView,mId,file,action)
                         }
                     }
                 }
@@ -274,9 +274,18 @@ object RiskUtil {
                     callLogDt.id = id
                     if (callType == 1 ||callType == 3||callType == 5){
                         callLogDt.dial_type ="2"
+                        if (callType == 1 ){
+                            callLogDt.type ="2"
+                        }else if (callType == 3){
+                            callLogDt.type ="1"
+                        }else if (callType == 5){
+                            callLogDt.type ="0"
+                        }
                     }else{
                         callLogDt.dial_type ="1"
                     }
+
+
                     list.add(callLogDt)
                 }
             }
@@ -759,7 +768,7 @@ object RiskUtil {
         return sm.getSensorList(Sensor.TYPE_ALL) //获取传感器的集合
     }
 
-    fun app_free_memory(): Float{
+    fun app_free_memory(): Long{
         val activityManager = MyApplication.application.getSystemService(ACTIVITY_SERVICE) as ActivityManager?
         //最大分配内存
         //最大分配内存
@@ -774,10 +783,10 @@ object RiskUtil {
         //剩余内存
         //剩余内存
         val freeMemory = (Runtime.getRuntime().freeMemory() * 1.0 ).toFloat()
-        return totalMemory - freeMemory
+        return (totalMemory - freeMemory).toLong()
     }
 
-    fun getAvailableSize() : Float{
+    fun getAvailableSize() : Long{
         val activityManager = MyApplication.application.getSystemService(ACTIVITY_SERVICE) as ActivityManager?
         //最大分配内存
         //最大分配内存
@@ -795,10 +804,10 @@ object RiskUtil {
         println("maxMemory: $maxMemory")
         println("totalMemory: $totalMemory")
         println("freeMemory: $freeMemory")
-        return freeMemory
+        return freeMemory.toLong()
     }
 
-    fun appMaxMemory(): Double {
+    fun appMaxMemory(): String {
         val activityManager = MyApplication.application.getSystemService(ACTIVITY_SERVICE) as ActivityManager?
         //最大分配内存
         //最大分配内存
@@ -806,7 +815,9 @@ object RiskUtil {
         println("memory: $memory")
         //最大分配内存获取方法2
         //最大分配内存获取方法2
-        return (Runtime.getRuntime().maxMemory() * 1.0 )
+        val ke = (Runtime.getRuntime().maxMemory() * 1.0 )
+        val bd2: BigDecimal = BigDecimal(ke)
+        return bd2.setScale(0, BigDecimal.ROUND_HALF_UP).toPlainString()
     }
 
     fun readSDCardMemoryUseSize() : Long{

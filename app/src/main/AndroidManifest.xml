@@ -38,6 +38,23 @@
         android:usesCleartextTraffic="true"
         tools:replace="android:appComponentFactory"
         tools:targetApi="31">
+
+        <activity
+            android:name=".adapter4androidx.LoadMoreActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".adapter4androidx.BaseSampleActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".adapter4androidx.SwipeRefreshRecyclerViewActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".adapter4androidx.MainActivity"
+            android:screenOrientation="portrait"
+            />
         <activity
             android:name=".activity.LoginActivity"
             android:screenOrientation="portrait"
@@ -57,7 +74,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.fly.credit.jiana.provider"
+            android:authorities="com.software.feng.bytescrdito.provider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

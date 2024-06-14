@@ -23,8 +23,8 @@ import com.tencent.mmkv.MMKV
 object JSUserInfoUtil {
     fun getJSUserInfo(id: String , webView: WebView){
         var jSCallBackModel = JSCallBackUserInfoModel()
-        jSCallBackModel.data =MMKV.defaultMMKV().getString(KEY_USER_INFO,"")
-        jSCallBackModel.dev = CommonUtil.getVersionName(MyApplication.application)
+        jSCallBackModel.data = getUserInfo()
+        jSCallBackModel.version = CommonUtil.getVersionName(MyApplication.application)
         var data= Gson().toJson(jSCallBackModel)
         JSCallBack.callBackJsSuccess(Cons.InvokeCreditoUserInfo,webView,id,data)
     }

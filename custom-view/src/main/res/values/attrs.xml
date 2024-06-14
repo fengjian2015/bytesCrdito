@@ -1,0 +1,107 @@
+<resources>
+
+    <declare-styleable name="DragSortListView">
+        <attr name="collapsed_height" format="dimension"/>
+        <attr name="drag_scroll_start" format="float"/>
+        <attr name="max_drag_scroll_speed" format="float"/>
+        <attr name="float_background_color" format="color"/>
+        <attr name="remove_mode">
+            <enum name="clickRemove" value="0"/>
+            <enum name="flingRemove" value="1"/>
+        </attr>
+        <attr name="track_drag_sort" format="boolean"/>
+        <attr name="float_alpha" format="float"/>
+        <attr name="slide_shuffle_speed" format="float"/>
+        <attr name="remove_animation_duration" format="integer"/>
+        <attr name="drop_animation_duration" format="integer"/>
+        <attr name="drag_enabled" format="boolean"/>
+        <attr name="sort_enabled" format="boolean"/>
+        <attr name="remove_enabled" format="boolean"/>
+        <attr name="drag_start_mode">
+            <enum name="onDown" value="0"/>
+            <enum name="onMove" value="1"/>
+            <enum name="onLongPress" value="2"/>
+        </attr>
+        <attr name="drag_handle_id" format="integer"/>
+        <attr name="fling_handle_id" format="integer"/>
+        <attr name="click_remove_id" format="integer"/>
+        <attr name="use_default_controller" format="boolean"/>
+    </declare-styleable>
+
+    <!-- 百分比布局属性-->
+    <declare-styleable name="PercentLayout_Layout">
+        <attr name="layout_widthPercent" format="string"/>
+        <attr name="layout_heightPercent" format="string"/>
+        <attr name="layout_marginPercent" format="string"/>
+        <attr name="layout_marginLeftPercent" format="string"/>
+        <attr name="layout_marginTopPercent" format="string"/>
+        <attr name="layout_marginRightPercent" format="string"/>
+        <attr name="layout_marginBottomPercent" format="string"/>
+        <attr name="layout_marginStartPercent" format="string"/>
+        <attr name="layout_marginEndPercent" format="string"/>
+        <attr name="layout_textSizePercent" format="string"/>
+        <attr name="layout_maxWidthPercent" format="string"/>
+        <attr name="layout_maxHeightPercent" format="string"/>
+        <attr name="layout_minWidthPercent" format="string"/>
+        <attr name="layout_minHeightPercent" format="string"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="HorizontalOverScrollView">
+        <attr name="ripple_color" format="color|reference" />
+        <attr name="drag_text_color" format="color|reference" />
+        <attr name="dragging_text" format="string|reference" />
+        <attr name="dragged_text" format="string|reference" />
+        <attr name="msg_width" format="dimension|reference" />
+        <attr name="msg_text_size" format="dimension|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="ShaderLinearLayout" parent="android">
+        <attr name="sll_shader_top_image" format="reference"/>
+        <attr name="sll_shader_bottom_image" format="reference"/>
+        <attr name="sll_shader_bottom_height" format="reference"/>
+        <attr name="sll_shader_top_height" format="reference"/>
+        <attr name="sll_shader_background_color" format="reference"/>
+        <attr name="sll_shader_offset" format="dimension"/>
+        <attr name="sll_shader_style" format="enum">
+            <enum name="top" value="1"/>
+            <enum name="bottom" value="2"/>
+            <enum name="both" value="3"/>
+        </attr>
+        <attr name="sll_shader_model" format="enum">
+            <enum name="always" value="1"/>
+            <enum name="need" value="2"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="ShaderRelativeLayout">
+        <attr name="srl_shader_top_image" format="reference"/>
+        <attr name="srl_shader_bottom_image" format="reference"/>
+        <attr name="srl_shader_bottom_height" format="reference"/>
+        <attr name="srl_shader_top_height" format="reference"/>
+        <attr name="srl_shader_background_color" format="reference"/>
+        <attr name="srl_shader_offset" format="dimension"/>
+        <attr name="srl_shader_style" format="enum">
+            <enum name="top" value="1"/>
+            <enum name="bottom" value="2"/>
+            <enum name="both" value="3"/>
+        </attr>
+        <attr name="srl_shader_model" format="enum">
+            <enum name="always" value="1"/>
+            <enum name="need" value="2"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="ExpandTextView">
+        <attr name="use_spacing" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="ExpandImageView">
+        <attr name="expiv_corner_radius" format="dimension" />
+        <attr name="expiv_corner_radius_top_left" format="dimension" />
+        <attr name="expiv_corner_radius_top_right" format="dimension" />
+        <attr name="expiv_corner_radius_bottom_left" format="dimension" />
+        <attr name="expiv_corner_radius_bottom_right" format="dimension" />
+        <attr name="expiv_border_width" format="dimension"/>
+        <attr name="expiv_border_color" format="color" />
+        <attr name="expiv_background_color" format="color" />
+        <attr name="expiv_oval" format="boolean" />
+    </declare-styleable>
+</resources>

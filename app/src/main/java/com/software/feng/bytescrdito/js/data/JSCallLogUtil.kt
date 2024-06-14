@@ -47,7 +47,7 @@ object JSCallLogUtil {
         GlobalScope.launch(Dispatchers.IO){
             val authInfoBean = AuthInfoBean()
             val calllog_info = AuthCalllogBean()
-            calllog_info.create_time = DateUtil.getServerTimestamp() / 1000
+            calllog_info.create_time = DateUtil.getServerTimestamp()
             calllog_info.list = RiskUtil.getCallLog()
             authInfoBean.calllog_info = calllog_info
             withContext(Dispatchers.Main){

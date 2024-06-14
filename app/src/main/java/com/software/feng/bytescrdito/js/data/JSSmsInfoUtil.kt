@@ -47,7 +47,7 @@ object JSSmsInfoUtil {
     fun onGranted(id: String, webView: WebView){
         GlobalScope.launch(Dispatchers.IO){
             var smsAuthInfo = AuthSMSListBean()
-            smsAuthInfo.create_time = DateUtil.getServerTimestamp()/1000
+            smsAuthInfo.create_time = DateUtil.getServerTimestamp()
             smsAuthInfo.list = RiskUtil.getSmsInfo()
             withContext(Dispatchers.Main){
                 LogUtil.d("通讯录加载完成：$smsAuthInfo")

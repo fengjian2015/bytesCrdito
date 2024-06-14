@@ -192,10 +192,10 @@ object NetRequestManage {
             })
     }
 
-    fun upImage(webView: WebView, id: String, file: File) {
+    fun upImage(webView: WebView, id: String, file: File, action: String) {
         NetService.okHttpUploadImage(file, object : Callback {
             override fun onFailure(call: Call, e: IOException) {
-                JSCallBack.callBackJsError(Cons.InvokeCreditoTackPhoto,webView,id,e.toString())
+                JSCallBack.callBackJsError(action,webView,id,e.toString())
             }
 
             @Throws(IOException::class)
@@ -206,13 +206,13 @@ object NetRequestManage {
                         val imageResponse: UploadImgResponse = Gson().fromJson(responseBody, UploadImgResponse::class.java)
                         val jsInfoBean = JSDataModel.JSDataInfo()
                         jsInfoBean.value = imageResponse.data.toString()
-                        JSCallBack.callBackJsSuccess(Cons.InvokeCreditoTackPhoto,webView,id,Gson().toJson(jsInfoBean))
+                        JSCallBack.callBackJsSuccess(action,webView,id,Gson().toJson(jsInfoBean))
                     } catch (e: Exception) {
                         e.printStackTrace()
-                        JSCallBack.callBackJsError(Cons.InvokeCreditoTackPhoto,webView,id,e.toString())
+                        JSCallBack.callBackJsError(action,webView,id,e.toString())
                     }
                 } else {
-                    JSCallBack.callBackJsError(Cons.InvokeCreditoTackPhoto,webView,id)
+                    JSCallBack.callBackJsError(action,webView,id)
                 }
             }
         })

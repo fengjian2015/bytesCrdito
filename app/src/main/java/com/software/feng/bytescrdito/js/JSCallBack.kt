@@ -42,7 +42,7 @@ object JSCallBack {
             try {
                 val toJson = Gson().toJson(model)
                 LogUtil.d("回调数据结果：$toJson")
-                val js = "javascript: window.JSForCreditoCallback && window.JSForCreditoCallback($toJson);"
+                val js = "javascript: window.JSCreditoCallback && window.JSCreditoCallback($toJson);"
                 webView.evaluateJavascript(js, callback as ValueCallback<String>?)
             } catch (w: Throwable) {
             }

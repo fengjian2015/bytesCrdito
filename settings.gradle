@@ -17,3 +17,7 @@ dependencyResolutionManagement {
 rootProject.name = "Credito"
 include ':app'
 include ':utillibrary'
+include ':library'
+include ':simple-adapter'
+include ':kotlin-common-library'
+include ':custom-view'

@@ -13,4 +13,11 @@ class UserInfoResponse : java.io.Serializable{
     var isNew : Boolean? = true
     var mustupdate: String? =""
     var appInstallUrl : String? = ""
+    var userId : String? = ""
+    var appId : String? = ""
+    var appName : String? = ""
+    var channelId : String? = ""
+    var id : String? =""
+    var whiteMark: String? =""
+
 }

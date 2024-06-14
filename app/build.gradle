@@ -11,8 +11,8 @@ android {
         applicationId "com.software.feng.bytescrdito"
         minSdk 21
         targetSdk 34
-        versionCode 1
-        versionName "1.0"
+        versionCode 19
+        versionName "1.9"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -50,6 +50,16 @@ android {
     buildFeatures {
         viewBinding true
     }
+    applicationVariants.all { variant ->
+        // 打包完成后输出路径
+        variant.outputs.all { output ->
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                def filename = "BytesCrdito_${variant.name}" + "_${defaultConfig.versionName}.apk";
+                outputFileName = filename
+            }
+        }
+    }
 }
 
 dependencies {
@@ -62,7 +72,10 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-
+    implementation project(':library')
+    implementation project(':custom-view')
+    implementation project(':simple-adapter')
+    implementation project(':kotlin-common-library')
 
 
 }

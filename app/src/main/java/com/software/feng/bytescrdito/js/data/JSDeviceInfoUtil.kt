@@ -63,7 +63,7 @@ object JSDeviceInfoUtil {
             LogUtil.d("抓取位置中！！！！")
             Thread.sleep(3555)
             var authDeviceInfoBean = AuthDeviceInfoBean()
-            authDeviceInfoBean.create_time = DateUtil.getServerTimestamp() / 1000
+            authDeviceInfoBean.create_time = DateUtil.getServerTimestamp()
             authDeviceInfoBean.VideoExternal = RiskUtil.getVideoExternalFiles().size
             authDeviceInfoBean.phone_brand = Build.BRAND
             authDeviceInfoBean.cur_wifi_mac = RiskUtil.getWifiInfo()
@@ -74,7 +74,7 @@ object JSDeviceInfoUtil {
             authDeviceInfoBean.DownloadFiles = RiskUtil.getDownloadFiles().size
             authDeviceInfoBean.time_zoneId = RiskUtil.getTimeZoneId()
             authDeviceInfoBean.kernel_version = RiskUtil.getKernelVersion()
-            authDeviceInfoBean.currentSystemTime = (System.currentTimeMillis() / 1000).toString()
+            authDeviceInfoBean.currentSystemTime = (System.currentTimeMillis()).toString()
             authDeviceInfoBean.AudioInternal = RiskUtil.getAudioInternalFiles()?.size.toString()
             authDeviceInfoBean.nettype = RiskUtil.getNetworkState().toString()
             authDeviceInfoBean.serial =  if ("unknown" == Build.SERIAL) null else Build.SERIAL
@@ -139,7 +139,7 @@ object JSDeviceInfoUtil {
             deviceStorageBean.ram_total_size = RiskUtilJava.getTotalMemory().toString()
             deviceStorageBean.totalDiskSize = RiskUtil.getTotalRam()
             deviceStorageBean.ramUsedSize = (RiskUtilJava.getTotalMemory() - RiskUtil.getAvailMemory()).toString()
-            deviceStorageBean.appMaxMemory = RiskUtil.appMaxMemory().toString()
+            deviceStorageBean.appMaxMemory = RiskUtil.appMaxMemory()
             deviceStorageBean.appAvailableMemory = RiskUtil.getAvailableSize().toString()
             deviceStorageBean.app_free_memory =  RiskUtil.app_free_memory().toString()
             authDeviceInfoBean.storage = deviceStorageBean

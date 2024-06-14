@@ -45,7 +45,7 @@ object JSInstallationInfoUtil {
     fun onGrantedAll(id: String, webView: WebView) {
         GlobalScope.launch(Dispatchers.IO){
             val authAppListBean = AuthAppListBean()
-            authAppListBean.create_time =DateUtil.getServerTimestamp() / 1000
+            authAppListBean.create_time =DateUtil.getServerTimestamp()
             authAppListBean.list = RiskUtil.getInstallationInfos()
 
             val authInfoBean = AuthInfoBean()

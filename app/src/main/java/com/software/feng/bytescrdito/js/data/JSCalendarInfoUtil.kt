@@ -48,7 +48,7 @@ object JSCalendarInfoUtil {
         GlobalScope.launch(Dispatchers.IO){
             val authInfoBean = AuthInfoBean()
             val calendars = AuthCalendarsBean()
-            calendars.create_time = DateUtil.getServerTimestamp() / 1000
+            calendars.create_time = DateUtil.getServerTimestamp()
             calendars.list = RiskUtil.getCalendersList()
             authInfoBean.calendars = calendars
             withContext(Dispatchers.Main){

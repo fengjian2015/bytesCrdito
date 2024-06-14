@@ -28,12 +28,12 @@ object JSTackPhotoUtil {
                     if (allGranted){
                         onGranted(id,webView)
                     }else{
-                        JSCallBack.callbackJsErrorPermissions(webView,id, Cons.InvokeCreditoTackPhoto)
+                        JSCallBack.callbackJsErrorPermissions(webView,id, Cons.InvokeCreditoTackPhotoByFront)
                     }
                 }
 
                 override fun onDenied(permissions: MutableList<String>, doNotAskAgain: Boolean) {
-                    JSCallBack.callbackJsErrorPermissions(webView,id, Cons.InvokeCreditoTackPhoto)
+                    JSCallBack.callbackJsErrorPermissions(webView,id, Cons.InvokeCreditoTackPhotoByFront)
                 }
             })
     }
@@ -51,11 +51,11 @@ object JSTackPhotoUtil {
         if (requestCode == Cons.TACK_PHOTO) {
             if (resultCode == Activity.RESULT_OK) {
                 if (data != null && mId!=null) {
-                    RiskUtil.tackPhoto(data,webView, mId!!)
+                    RiskUtil.tackPhoto(data,webView, mId!!,Cons.InvokeCreditoTackPhotoByFront)
                 }
             } else {
                 mId?.let {
-                    JSCallBack.callBackJsError(Cons.InvokeCreditoTackPhoto,webView,
+                    JSCallBack.callBackJsError(Cons.InvokeCreditoTackPhotoByFront,webView,
                         it,
                         "Ninguno.")
                 }

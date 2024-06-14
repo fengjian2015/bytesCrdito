@@ -22,7 +22,11 @@ object Cons {
 
     //======================数据====================================
     const val JavascriptInterfaceName = "mx"
-    const val baseUrl = "http://118.31.58.168:7004"
+    //正式环境
+    const val baseUrl = "https://api.mxbytecredit.com"
+    //测试环境
+//    const val baseUrl = "http://118.31.58.168:7004"
+
     const val UPLOADIMAGE="/app/system/uploadimg"
 
     //======================User KEY====================================
@@ -31,6 +35,7 @@ object Cons {
     val EXTENSION = "EXTENSION"
     const val SELECT_CONTACTS_CONTRACT = 1088
     const val TACK_PHOTO = 1888
+    const val TACK_PHOTO_BACK = 1999
     //======================JS KEY====================================
 
     const val InvokeCreditoUserInfo = "invokeCreditoUserInfo"
@@ -43,7 +48,10 @@ object Cons {
     const val InvokeCreditoCalendarInfo = "invokeCreditoCalendarInfo"
     const val InvokeCreditoSelectContact = "invokeCreditoSelectContact"
     const val InvokeCreditoAppsFlyer = "invokeCreditoAppsFlyer"
-    const val InvokeCreditoTackPhoto = "invokeCreditoTackPhoto"
+
+    const val InvokeCreditoTackPhotoByFront = "invokeCreditoTackPhotoByFront"
+    const val InvokeCreditoTackPhotoByBack = "invokeCreditoTackPhotoByBack"
+
     const val InvokeCreditoForwardOutside = "invokeCreditoForwardOutside"
     const val InvokeCreditoAppServiceTime = "invokeCreditoAppServiceTime"
     const val InvokeCreditoOpenBrowser = "invokeCreditoOpenBrowser"

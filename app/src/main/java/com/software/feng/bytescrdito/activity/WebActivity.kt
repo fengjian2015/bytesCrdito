@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.activity.viewModels
@@ -100,6 +101,18 @@ class WebActivity : BaseActivity<ActivityWebBinding>(ActivityWebBinding::inflate
                 finish()
             }
         }
+    }
+
+    /**
+     * 使点击回退按钮不会直接退出整个应用程序而是返回上一个页面
+     *
+     */
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            back()
+            return true
+        }
+        return super.onKeyDown(keyCode, event) //退出整个应用程序
     }
 
     override fun onDestroy() {

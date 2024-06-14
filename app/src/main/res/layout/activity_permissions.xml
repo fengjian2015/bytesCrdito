@@ -13,7 +13,7 @@
         android:textColor="#333333"
         android:textSize="18sp"
         android:gravity="center"
-        android:text="Permission"/>
+        android:text="Estimado cliente"/>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -26,41 +26,24 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="User Personal Information"
-                android:textSize="14sp"
-                android:textColor="#333333"
-                android:drawableRight="@mipmap/ic_permissions_gou"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="#FF750A"
-                android:textSize="14sp"
-                android:text="Our app collects user account data which includes email address and user public profile information like name, photo phone number by you to log-in to the app. This information is required as a part of registration process to access our service and it is also used to auto-populate relevant fields in the course of the interface of our app. Our app also collects mobile number for verification to check the active SIM status on the device, uniquely identify you and prevent frauds and access."
-                />
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:text="SMS"
                 android:textSize="14sp"
                 android:textColor="#333333"
-                android:layout_marginTop="10dp"
                 android:drawableRight="@mipmap/ic_permissions_gou"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#FF750A"
+                android:textColor="#666666"
                 android:textSize="14sp"
-                android:text="SMS data from phone will be collected,transmitted and stored in our secured server(https://api.nairabagng.com) to assess creditworthiness, understand cash flow patterns and for fraud prevention. This data may be collected when the app is closed or not in use."
+                android:text="Para realizar una evaluación del riesgo crediticio, solo recopilamos y monitoreamos los SMS de transacciones financieras para transacciones bancarias, los nombres de las partes involucradas en la transacción, la descripción de la transacción y el monto de la transacción. Esta evaluación del riesgo crediticio nos permite emitir préstamos con mayor rapidez. No se recopilan, leen ni almacenan datos personales de SMS. Nuestra aplicación transmitirá los datos a nuestro servidor https://api.mxbytecredit.com para la evaluación crediticia y brindar servicios personalizados. Una vez completada la evaluación de riesgos, sus datos serán eliminados. El usuario puede deshabilitar este permiso en cualquier momento en la administración de la aplicación en el dispositivo móvil (el cierre puede afectar los servicios que brindamos)."
                 />
+
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Location"
+                android:text="Call Log (Registro de llamadas)"
                 android:textSize="14sp"
                 android:textColor="#333333"
                 android:layout_marginTop="10dp"
@@ -71,13 +54,16 @@
                 android:layout_height="wrap_content"
                 android:textColor="#666666"
                 android:textSize="14sp"
-                android:text="We collect and monitor the information about the location of your device to provide serviceability of your loan application, to reduce risk associated with your loan application and to provide pre-approved loan offers,this data will be transmitted and stored in our secured server(https://api.nairabagng.com). This also helps us to verify the address, make a better credit risk decision and expedite your KYC process."
+                android:text="Al solicitar un préstamo,utilizaremos el permiso del registro de llamadas para obtener el número de contacto y la hora de la llamada, y al mismo tiempo verificar el dispositivo haciendo una llamada;
+verifique el número correspondiente en el registro de llamadas para determinar si ha recibido el llamar. Puede mejorar la experiencia de inicio de sesión del
+usuario y verificar la autenticidad dela identidad del usuario.Al mismo tiempo para proteger la seguridad de la cuenta e identificar riesgos de fraude.suba toda la información a nuestro servidor ( https://api.mxbytecredit.com).Nunca
+compartiremos estos Datos con otros socios.Solo los obtendrán con su consentimiento."
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Camera"
+                android:text="Contact List"
                 android:textSize="14sp"
                 android:textColor="#333333"
                 android:layout_marginTop="10dp"
@@ -88,13 +74,13 @@
                 android:layout_height="wrap_content"
                 android:textColor="#666666"
                 android:textSize="14sp"
-                android:text="We require camera access so that you can easily scan, or capture required KYC documents and save time by allowing us to auto-fill relevant data. This ensures that you are provided with a seamless experience while using the application."
+                android:text="Nuestra aplicación necesita este permiso para detectar referencias y autocompletar datos durante el proceso de solicitud de préstamo, de modo que los usuarios puedan completar la información correctamente para garantizar la precisión de la información del préstamo y el progreso normal del proceso de revisión. Además, la aplicación también recopila y monitorea su información de contacto, incluido el nombre, número de teléfono, tipo de cuenta, último contacto modificado, favoritos y datos opcionales (como relación y dirección estructural de otros) para enriquecer su situación financiera. la elegibilidad de su préstamo. Nuestra aplicación cargará la información de la libreta personal de direcciones del usuario en nuestro servicio https://api.mxbytecredit.com, aunque la app esté cerrada o no esté en uso, así lo hará. Una vez completada la evaluación de riesgos, se eliminarán sus datos. Puedes deshabilitar este permiso en cualquier momento en la administración de la aplicación en el dispositivo móvil (el cierre puede afectar los servicios que brindamos)."
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Installed Applications"
+                android:text="Cámara"
                 android:textSize="14sp"
                 android:textColor="#333333"
                 android:layout_marginTop="10dp"
@@ -105,14 +91,13 @@
                 android:layout_height="wrap_content"
                 android:textColor="#666666"
                 android:textSize="14sp"
-                android:text="Metadata on installed apps will be collected,transmitted and stored in our secured server(https://api.nairabagng.com) to assess your creditworthiness and for analytical purposes. This data may be collected when the app is closed or not in use."
+                android:text="Cuando necesita identificación en tiempo real, nuestros productos de aplicación le solicitan permisos de cámara, que se verifican a través de servicios de identificación en tiempo real y autenticación de nombre real para verificar su autenticidad y proteger su cuenta. Puede desactivar esta autorización en la configuración del sistema, cuando está desactivada, no podrá cargar contenido complementario o identificar imágenes, lo que puede afectar los resultados de aprobación de su préstamo.Nuestra aplicación transmitirá los datos a nuestro servidor https://api.mxbytecredit.com para la evaluación crediticia y brindar servicios personalizados. Una vez completada la evaluación de riesgos, sus datos serán eliminados. "
                 />
-
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Storage"
+                android:text="Ubicación"
                 android:textSize="14sp"
                 android:textColor="#333333"
                 android:layout_marginTop="10dp"
@@ -123,13 +108,14 @@
                 android:layout_height="wrap_content"
                 android:textColor="#666666"
                 android:textSize="14sp"
-                android:text="We require storage permission so that your KYC and other relevant documents can be securely downloaded and saved on your phone. You can then easily upload the right KYC related documents for faster loan application details filling and disbursal process. This ensures that you are provided with a seamless experience while using the application."
+                android:text="Podemos recopilar información de ubicación de su dispositivo para mantener segura su cuenta, incluidos GPS, longitud, latitud, área de ubicación, código de área de ubicación, patrón de ubicación, hora de ubicación y otra información relacionada con la ubicación del dispositivo del usuario. información. Lo confirmaremos cuando inicie sesión en nuestra aplicación en otro lugar para asegurarnos de que su cuenta no esté en riesgo.Nuestra aplicación transmitirá los datos a nuestro servidor https://api.mxbytecredit.com para la evaluación crediticia y brindar servicios personalizados. Una vez completada la evaluación de riesgos, sus datos serán eliminados. "
                 />
+
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Call History"
+                android:text="Aplicaciones instaladas"
                 android:textSize="14sp"
                 android:textColor="#333333"
                 android:layout_marginTop="10dp"
@@ -140,26 +126,10 @@
                 android:layout_height="wrap_content"
                 android:textColor="#666666"
                 android:textSize="14sp"
-                android:text="When applying for a loan, we will use the call recording permission to obtain the contact phone number and call time, and verify the device by making a phone call to check the corresponding number in the call log to determine if you have received the call. It can improve the user's login experience and verify the authenticity of the user's identity. Simultaneously protecting account security and identifying fraud risks. The data will be uploaded to our server(https://api.nairabagng.com).We will never share this data with other partners. "
+                android:text="También recopilaremos una lista de aplicaciones instaladas en su dispositivo, incluido el nombre de la aplicación, el tiempo de instalación, la versión instalada, etc., para detectar la presencia de malware, trampas y así mantener la seguridad del entorno del sistema móvil y el servicio de préstamo. Solo servicios de evaluación de crédito y prevención de fraude. No venderemos, intercambiaremos ni alquilaremos la información de su Lista de solicitudes a terceros.Nuestra aplicación transmitirá los datos a nuestro servidor https://api.mxbytecredit.com para la evaluación crediticia y brindar servicios personalizados. Una vez completada la evaluación de riesgos, sus datos serán eliminados. "
                 />
 
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Device Information"
-                android:textSize="14sp"
-                android:textColor="#333333"
-                android:layout_marginTop="10dp"
-                android:drawableRight="@mipmap/ic_permissions_gou"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="#666666"
-                android:textSize="14sp"
-                android:text="This information about the device you use will be collected,transmitted and stored in our secured server(https://api.nairabagng.com),including device model,IP address,browser type,system version,manufacturer and so on.This is required for hassle-free registration and fraud prevetion."
-                />
         </LinearLayout>
     </ScrollView>
     <LinearLayout

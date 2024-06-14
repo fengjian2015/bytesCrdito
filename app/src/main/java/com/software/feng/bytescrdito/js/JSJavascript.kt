@@ -40,7 +40,8 @@ class JSJavascript constructor(context: Context,webView: WebView) {
             Cons.InvokeCreditoCalendarInfo->JSCalendarInfoUtil.calendarInfo(jsDataModel.id,webView)
             Cons.InvokeCreditoSelectContact->JSSelectContactUtil.selectContact(jsDataModel.id,webView)
             Cons.InvokeCreditoAppsFlyer->JSAppsFlyerUtil.appsFlyer(jsDataModel.id,webView,jsDataModel)
-            Cons.InvokeCreditoTackPhoto->JSTackPhotoUtil.tackPhoto(jsDataModel.id,webView)
+            Cons.InvokeCreditoTackPhotoByFront->JSTackPhotoUtil.tackPhoto(jsDataModel.id,webView)
+            Cons.InvokeCreditoTackPhotoByBack->JSTackPhotoByBackUtil.tackPhoto(jsDataModel.id,webView)
             Cons.InvokeCreditoForwardOutside->JSForwardOutsideUtil.forwardOutside(jsDataModel.id,webView,jsDataModel.data)
             Cons.InvokeCreditoAppServiceTime->JSAppServiceTimeUtil.appServiceTime(jsDataModel.id,webView,jsDataModel.data)
             Cons.InvokeCreditoOpenBrowser->JSOpenBrowserUtil.openBrowser(jsDataModel.id,webView,jsDataModel.data)
@@ -51,5 +52,6 @@ class JSJavascript constructor(context: Context,webView: WebView) {
     fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         JSSelectContactUtil.onActivityResult(requestCode,resultCode,data,webView)
         JSTackPhotoUtil.onActivityResult(requestCode,resultCode,data,webView)
+        JSTackPhotoByBackUtil.onActivityResult(requestCode,resultCode,data,webView)
     }
 }

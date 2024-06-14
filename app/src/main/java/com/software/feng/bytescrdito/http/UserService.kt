@@ -10,39 +10,39 @@ import retrofit2.http.*
 /**
  * Time：2024/5/12
  * Author：feng
- * Description：
+ * Description：正式环境
  */
 interface UserService {
     //获取短信验证码
-    @POST("/app/XoHAjwZ2obcZiHaRPY8lJ+Q0CF6G4eRgKkuIUOp/nu4=")
+    @POST("/app/ggPWLzQnLgxyemRgzZjZrgg9r1fpTYHABh5kMKVJ0GE=")
     fun getSMS(@Body map: Map<String, String?>): Observable<SMSResponse>
 
     //登录
-    @POST("/app/SgGwPxKCorlX/q0Hctc+ESn/aTw99Qy8aicvKNkov+w=")
+    @POST("/app/+cwwWjxsehKOdV/wpCkEq81FMx8Aap+R/s/khBwk9h0=")
     fun login(@Body map: Map<String, String?>): Observable<UserInfoResponseBase>
 
     //静默登录
-    @POST("/app/QJ0b9mkySRzjZxNlDnuUWQigqFjnG3ISz4ENEZlJF+o=")
+    @POST("/app/92CoZtSEUdNBCBnGSkhol23OeBjGDjhkiE0lLWxxruI=")
     fun staticLogin(@Body params: Map<String, String?>): Observable<UserInfoResponseBase>
 
     //退出登录
-    @POST("/app/2hDNLIkuSCXGUtnsm7VwaA==")
+    @POST("/app/no4OT2pkOnZOcL3MP1ujNw==")
     fun logout(@Body map: Map<String, String?>): Observable<BaseResponseBean>
 
     //埋点
-    @POST("/app/22BZNNkzaP76ByNtjZ2BxWg0inbbBMT72r8RcDcRX/8=")
+    @POST("/app/U01eJb8GiIfaJFitd9eOVphDXMJWtliEj+iasw8MUwo=")
     fun addUserAction(@Body map: Map<String, String?>): Observable<BaseResponseBean>
 
     //提交风控信息
-    @POST("/app/tgMqSVLzc9Mrpd9yOfpiJuHL/r073596XMj3OU+6U2eOUQR5owUH3+GM8m7f/q1C")
+    @POST("/app/gZfkhJdhypv2j8glnf9yYkCxsSYc/eDtqbPNvInh2x4I7mDur6flqUnI4m0UT7xu")
     fun uploadCreditModeLoanWardAuth(@Body map: Map<String, String?>): Observable<BaseResponseBean>
 
     //协议
-    @POST("/app/tKmLDCZwJQfBmAYNe9+qJOC4h9TvbBA448LyePIgOuA=")
+    @POST("/app/WZDamUcKUgrybN3deT1QTVBt9i5s8U8I2sxk+IjsCaU=")
     open fun getProtocolUrlv2(@Body map: Map<String, String?>): Observable<ProtocolUrlResponse>
 
     //上传图片
-    @POST("/app/M8OKnpOJpWn7IH7YhGU11w65EQyyMJfgbgC4Ry4pVxU=")
+    @POST("/app/1P81UZvvnqBhaR6lqdbLhOo761XVSttI/e3HknCZyUs=")
     open fun uploadimg(
         @Part file: MultipartBody.Part?,
         @Part type: MultipartBody.Part?

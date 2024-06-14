@@ -17,7 +17,7 @@ public class ValueInterceptor implements Interceptor {
         if (requestBody!=null) {
             request = request.newBuilder()
                     .header("lang", "en_US")
-                    .header("appName","bytescrdito")
+                    .header("appName","Bytescredito")
                     .header("Authorization", JSUserInfoUtil.INSTANCE.getToken())
                     .build();
         }

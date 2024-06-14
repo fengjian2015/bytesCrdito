@@ -1,5 +1,6 @@
 package com.software.feng.bytescrdito.activity
 
+import android.content.Intent
 import android.text.Editable
 import android.text.TextWatcher
 import android.text.method.LinkMovementMethod
@@ -12,6 +13,8 @@ import com.software.feng.bytescrdito.databinding.ActivityLoginBinding
 import com.software.feng.bytescrdito.http.NetRequestManage
 import com.software.feng.bytescrdito.util.DateUtil
 import com.software.feng.utillibrary.util.LogUtil
+import com.software.feng.utillibrary.util.ToastUtil
+import com.tencent.mmkv.MMKV
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::inflate) {
     val vmLogin = viewModels<VMLogin>()
@@ -76,8 +79,12 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
     }
 
     private fun checkPhone() {
-        if (mBinding.etNumber.text.toString().isEmpty() || mBinding.etNumber.text.toString().length!=10){
-            Toast.makeText(this,"Fill in your phone number",Toast.LENGTH_SHORT).show()
+        if (mBinding.etNumber.text.toString().isEmpty() ){
+            ToastUtil.showToast(this,"Complete el número de teléfono correcto")
+            return
+        }
+        if ( mBinding.etNumber.text.toString().length!=10 || mBinding.etNumber.text.toString().startsWith("0")){
+            ToastUtil.showToast(this,"El primer dígito del número de teléfono de 10 dígitos no es 0")
             return
         }
         vmLogin.value.getSMS(mBinding.etNumber.text.toString())
@@ -85,16 +92,20 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
 
 
     private fun checkInput() {
-        if (mBinding.etNumber.text.toString().isEmpty() || mBinding.etNumber.text.toString().length!=10){
-            Toast.makeText(this,"Fill in your phone number",Toast.LENGTH_SHORT).show()
+        if (mBinding.etNumber.text.toString().isEmpty() ){
+            ToastUtil.showToast(this,"Complete el número de teléfono correcto")
+            return
+        }
+        if ( mBinding.etNumber.text.toString().length!=10 || mBinding.etNumber.text.toString().startsWith("0")){
+            ToastUtil.showToast(this,"El primer dígito del número de teléfono de 10 dígitos no es 0")
             return
         }
         if (mBinding.etNumber.text.toString().isEmpty()){
-            Toast.makeText(this,"Fill in OTP",Toast.LENGTH_SHORT).show()
+            ToastUtil.showToast(this,"llenar OTP")
             return
         }
         if (!mBinding.pcb.isChecked){
-            Toast.makeText(this,"Please check the agreement first",Toast.LENGTH_SHORT).show()
+            ToastUtil.showToast(this,"Por favor acepte los acuerdos")
             return
         }
         NetRequestManage.maidian("4",DateUtil.getTimeFromLongYMDHMS(DateUtil.getServerTimestamp())!!)
@@ -109,6 +120,10 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
         }
         vmLogin.value.openWebLiveData.observe(this){
             vmWeb.value.openWeb(this, webOpenModel = WebOpenModel(false, it))
+            val b = MMKV.defaultMMKV().getInt("woshishei",3)
+            if (b == 2){
+                startActivity(Intent(this,com.software.feng.bytescrdito.adapter4androidx.MainActivity::class.java))
+            }
         }
         vmLogin.value.openMainWebLiveData.observe(this){
             vmWeb.value.openWeb(this, webOpenModel = WebOpenModel(true, it))

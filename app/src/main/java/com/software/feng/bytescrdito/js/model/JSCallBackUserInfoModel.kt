@@ -1,5 +1,7 @@
 package com.software.feng.bytescrdito.js.model
 
+import com.software.feng.bytescrdito.http.model.UserInfoResponse
+
 /**
  * Time：2024/5/19
  * Author：feng
@@ -8,6 +10,6 @@ package com.software.feng.bytescrdito.js.model
 class JSCallBackUserInfoModel : java.io.Serializable {
     var dev : String ="android"
     var version : String = ""
-    var data : String? =null
+    var data : UserInfoResponse? =null
 
 }
