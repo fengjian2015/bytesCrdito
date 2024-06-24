@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#4D000000"
+    xmlns:tootls="http://schemas.android.com/tools"
+    >
+    <LinearLayout
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@mipmap/ic_update_bg"
+        android:paddingBottom="20dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="140dp"
+            android:paddingHorizontal="15dp"
+            android:textColor="#FF750A"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text="Nueva versión disponible"/>
+
+        <TextView
+            android:id="@+id/tv_content1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingHorizontal="15dp"
+            android:textColor="#333333"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:text="Por favor, actualice a la última."/>
+
+        <Button
+            android:id="@+id/buttonUpload"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:foreground="?selectableItemBackground"
+            android:layout_marginTop="18dp"
+            android:background="@mipmap/ic_update_button"
+            android:textColor="#ffffff"
+            android:layout_marginHorizontal="46dp"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

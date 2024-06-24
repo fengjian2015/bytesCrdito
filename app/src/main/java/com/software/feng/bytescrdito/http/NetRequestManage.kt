@@ -96,10 +96,13 @@ object NetRequestManage {
                         data.data?.let {
                             if (it.isNew == true){
                                 AppsFlyerUtil.postAF("CompleteRegistration")
-
                             }
                             JSUserInfoUtil.setUserInfo(it)
-                            function.invoke(0)
+                            if (it.mustUpdate!=null && it.mustUpdate!! == "1"){
+                                function.invoke(3)
+                            }else {
+                                function.invoke(0)
+                            }
                         }
                     }else{
                         if (data != null) {
@@ -218,7 +221,7 @@ object NetRequestManage {
         })
     }
 
-    fun checkUpdate(){
+    fun checkUpdate(function: Function1<Int,Int>){
         val map: MutableMap<String, String> = HashMap()
         map.put("version",RiskUtil.getVersionName())
         NetService.getNewService()
@@ -233,6 +236,9 @@ object NetRequestManage {
                     if (data?.code == 200) {
                         data?.data?.let {
                             JSUserInfoUtil.setUserInfo(it)
+                            if (it.mustUpdate!=null && it.mustUpdate!! == "1"){
+                                function.invoke(3)
+                            }
                         }
                     }else{
                         JSUserInfoUtil.logout()

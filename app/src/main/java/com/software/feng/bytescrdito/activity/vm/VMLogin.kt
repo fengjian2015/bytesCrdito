@@ -12,8 +12,10 @@ import android.view.View
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.software.feng.bytescrdito.http.NetRequestManage
+import com.software.feng.bytescrdito.http.model.UserInfoResponse
 import com.software.feng.bytescrdito.js.data.JSUserInfoUtil
 import com.software.feng.bytescrdito.util.DateUtil
+import com.software.feng.bytescrdito.weight.UpdateDialog
 import com.tencent.mmkv.MMKV
 
 /**
@@ -28,7 +30,7 @@ class VMLogin : ViewModel() {
     val timeLiveData : MutableLiveData<Long> by lazy { MutableLiveData() }
     val timeOverLiveData : MutableLiveData<Long> by lazy { MutableLiveData() }
     val sendSuccessLiveData : MutableLiveData<Boolean> by lazy { MutableLiveData() }
-
+    val update : MutableLiveData<Boolean> by lazy { MutableLiveData() }
     private val codeTime: Long = 60
     private var smsSendTime: Long = 0
 
@@ -66,11 +68,14 @@ class VMLogin : ViewModel() {
         })
     }
 
-    fun login(phone: String, code : String){
+    fun login(phone: String, code : String, function: Function1<Int,Int>){
         NetRequestManage.Login(phone,code,object : Function1<Int,Int>{
             override fun invoke(p1: Int): Int {
                 if (p1 == 0){
                     openMainWebLiveData.postValue(JSUserInfoUtil.getHomeUrl())
+                } else  if (p1 == 3 ){
+                    function.invoke(3)
+
                 }
                 return 1
             }

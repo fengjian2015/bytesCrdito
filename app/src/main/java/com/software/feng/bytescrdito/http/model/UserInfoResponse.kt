@@ -11,7 +11,7 @@ class UserInfoResponse : java.io.Serializable{
     var name : String? = ""
     var phone : String? = ""
     var isNew : Boolean? = true
-    var mustupdate: String? =""
+    var mustUpdate: String? =""
     var appInstallUrl : String? = ""
     var userId : String? = ""
     var appId : String? = ""

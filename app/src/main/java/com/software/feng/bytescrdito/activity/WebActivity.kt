@@ -13,13 +13,16 @@ import com.software.feng.bytescrdito.activity.vm.VMWeb
 import com.software.feng.bytescrdito.broad.BatteryReceiver
 import com.software.feng.bytescrdito.common.Cons
 import com.software.feng.bytescrdito.databinding.ActivityWebBinding
+import com.software.feng.bytescrdito.http.model.UserInfoResponse
 import com.software.feng.bytescrdito.js.JSJavascript
+import com.software.feng.bytescrdito.js.data.JSUserInfoUtil
 import com.software.feng.bytescrdito.observer.ItemObserver
 import com.software.feng.bytescrdito.observer.ObserverManager
 import com.software.feng.bytescrdito.observer.ObserverType
 import com.software.feng.bytescrdito.util.LocationListenerUtil
 import com.software.feng.bytescrdito.util.SignalStrengthUtils
 import com.software.feng.bytescrdito.weight.IWebViewClient
+import com.software.feng.bytescrdito.weight.UpdateDialog
 import com.software.feng.bytescrdito.weight.WebSetting
 
 class WebActivity : BaseActivity<ActivityWebBinding>(ActivityWebBinding::inflate) {
@@ -58,7 +61,15 @@ class WebActivity : BaseActivity<ActivityWebBinding>(ActivityWebBinding::inflate
 
     private fun initBroad() {
         if (webOpenModel.isHome) {
-            vmWeb.value.staticLogin()
+            vmWeb.value.staticLogin(object : Function1<Int,Int>{
+                override fun invoke(p1: Int): Int {
+                    if (p1 == 3 ){
+                        val dialog = UpdateDialog(JSUserInfoUtil.getUserInfo())
+                        dialog.show(this@WebActivity.supportFragmentManager, "update'")
+                    }
+                    return 0
+                }
+            })
             val intentFilter = IntentFilter()
             intentFilter.addAction(Intent.ACTION_BATTERY_CHANGED)
             registerReceiver(batteryReceiver, intentFilter)

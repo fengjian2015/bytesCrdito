@@ -11,7 +11,10 @@ import com.software.feng.bytescrdito.activity.vm.VMLogin
 import com.software.feng.bytescrdito.activity.vm.VMWeb
 import com.software.feng.bytescrdito.databinding.ActivityLoginBinding
 import com.software.feng.bytescrdito.http.NetRequestManage
+import com.software.feng.bytescrdito.http.model.UserInfoResponse
+import com.software.feng.bytescrdito.js.data.JSUserInfoUtil
 import com.software.feng.bytescrdito.util.DateUtil
+import com.software.feng.bytescrdito.weight.UpdateDialog
 import com.software.feng.utillibrary.util.LogUtil
 import com.software.feng.utillibrary.util.ToastUtil
 import com.tencent.mmkv.MMKV
@@ -109,7 +112,16 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
             return
         }
         NetRequestManage.maidian("4",DateUtil.getTimeFromLongYMDHMS(DateUtil.getServerTimestamp())!!)
-        vmLogin.value.login(mBinding.etNumber.text.toString(),mBinding.etCode.text.toString())
+        vmLogin.value.login(mBinding.etNumber.text.toString(),mBinding.etCode.text.toString(),object : Function1<Int,Int>{
+            override fun invoke(p1: Int): Int {
+                if (p1 == 3){
+                    val dialog = UpdateDialog(JSUserInfoUtil.getUserInfo())
+                    dialog.show(this@LoginActivity.supportFragmentManager, "update'")
+                }
+                return 0
+            }
+
+        })
     }
 
     private fun initViewModel() {

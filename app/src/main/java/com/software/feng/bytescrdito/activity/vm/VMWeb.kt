@@ -24,7 +24,14 @@ class VMWeb: ViewModel() {
         openWebLiveData.postValue(true)
     }
 
-    fun staticLogin(){
-        NetRequestManage.checkUpdate()
+    fun staticLogin(function: Function1<Int,Int>){
+        NetRequestManage.checkUpdate(object : Function1<Int,Int>{
+            override fun invoke(p1: Int): Int {
+                if (p1 == 3){
+                    function.invoke(3)
+                }
+                return 0
+            }
+        })
     }
 }
