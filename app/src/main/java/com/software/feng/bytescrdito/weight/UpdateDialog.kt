@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import com.software.feng.bytescrdito.R
@@ -18,6 +19,7 @@ import com.software.feng.bytescrdito.util.ActivityManager
 class UpdateDialog constructor(updateBean : UserInfoResponse?): DialogFragment() {
     private var updateBean : UserInfoResponse?
     private lateinit var tvContent:TextView
+    private lateinit var Later:ImageView
     init {
         this.updateBean =updateBean
     }
@@ -40,12 +42,17 @@ class UpdateDialog constructor(updateBean : UserInfoResponse?): DialogFragment()
         val rootView: View = inflater.inflate(R.layout.layout_update_dialog, null)
         tvContent =rootView.findViewById(R.id.tv_content)
         buttonUpload =rootView.findViewById(R.id.buttonUpload)
+        Later = rootView.findViewById(R.id.ivBack)
+        Later.setOnClickListener {
+            dismiss()
+        }
         initData()
         return rootView
     }
 
     private fun initData(){
         isCancelable = updateBean?.mustUpdate != "1"
+        initLaterButton()
         buttonUpload.setOnClickListener {
 //            val intent = Intent()
 //            intent.action = "android.intent.action.VIEW" //Intent.ACTION_VIEW
@@ -68,5 +75,12 @@ class UpdateDialog constructor(updateBean : UserInfoResponse?): DialogFragment()
 
     }
 
+    fun initLaterButton(){
+        if (!isCancelable){
+            Later.visibility = View.GONE
+        }else{
+            Later.visibility = View.VISIBLE
+        }
+    }
 
 }

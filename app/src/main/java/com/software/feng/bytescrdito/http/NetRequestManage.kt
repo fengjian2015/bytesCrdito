@@ -236,8 +236,10 @@ object NetRequestManage {
                     if (data?.code == 200) {
                         data?.data?.let {
                             JSUserInfoUtil.setUserInfo(it)
-                            if (it.mustUpdate!=null && it.mustUpdate!! == "1"){
-                                function.invoke(3)
+                            if (it.mustUpdate!=null ){
+                                if (it.mustUpdate == "1" || it.mustUpdate == "0"){
+                                    function.invoke(3)
+                                }
                             }
                         }
                     }else{
